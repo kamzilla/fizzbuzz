@@ -18,11 +18,11 @@ def input_check(response):
         get_input()
         
 def fizz_buzz(number):
-    if number%15 == 0:
+    if number % 15 == 0:
         print "fizzbuzz"
-    elif number%3 == 0:
-	        print "fizz"
-    elif number%5 == 0:
+    elif number % 3 == 0:
+        print "fizz"
+    elif number % 5 == 0:
         print "buzz"
     else:
         print number
