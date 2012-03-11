@@ -1,21 +1,22 @@
 def get_input():
     print "Enter in a number or 'exit' when done"
     response = raw_input("> ")
-    input_check(response)
+    return response
     
 def input_check(response):
     if response.isdigit():
         number = int(response)
         fizz_buzz(number)
+        return False
     elif response.isalpha() and not response == "exit":
         print "please enter a number, not a word"
-        get_input()
+        return False
     elif response == "exit":
         print "thanks for playing"
-        return
+        return True
     else: 
         print "WTF!?!"
-        get_input()
+        return False
         
 def fizz_buzz(number):
     if number % 15 == 0:
@@ -26,10 +27,11 @@ def fizz_buzz(number):
         print "buzz"
     else:
         print number
-        print "this number is not divisible by 3 and 5"    
-    get_input()
+        print "this number is not divisible by 3 and 5"
 
 def run():
-    get_input()
+    ready_to_exit = False
+    while (not ready_to_exit):
+        ready_to_exit = input_check(get_input())
 
 run()
